@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Idade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .inputs {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .campo {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            width: 70px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover { background-color: #218838; }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Calculadora de Idade</h2>
+        
+        <div class="inputs">
+            <div class="campo">
+                <label>Dia</label>
+                <input type="number" id="dia" placeholder="Ex: 15">
+            </div>
+            <div class="campo">
+                <label>Mês</label>
+                <input type="number" id="mes" placeholder="Ex: 08">
+            </div>
+            <div class="campo">
+                <label>Ano</label>
+                <input type="number" id="ano" placeholder="Ex: 1995">
+            </div>
+        </div>
+
+        <button onclick="calcularIdade()">Calcular</button>
+
+        <div id="resultado">---</div>
+    </div>
+
+    <script src="Calculadora de idade.js"></script>
+</body>
+</html>
