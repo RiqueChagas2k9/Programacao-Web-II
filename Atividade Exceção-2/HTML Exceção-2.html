@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Avançado - Coletor de Erros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 40px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 0;
+            text-align: center;
+            color: #333;
+        }
+        .campo-grupo {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #444;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        /* Estilo para quando o campo estiver com erro */
+        input.campo-invalido {
+            border-color: #dc3545;
+            background-color: #fff8f8;
+        }
+        /* Erro específico abaixo do campo */
+        .erro-campo {
+            color: #dc3545;
+            font-size: 12px;
+            display: block;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        /* Painel de erros gerais no topo */
+        #erros-gerais {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        #erros-gerais ul {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+        }
+        /* Mensagem de Sucesso */
+        #mensagem-sucesso {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004085;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Cadastro Completo</h2>
+
+        <!-- Painel de Sucesso -->
+        <div id="mensagem-sucesso">🎉 Cadastro realizado com sucesso!</div>
+
+        <!-- Painel de Erros Gerais (Lista) -->
+        <div id="erros-gerais">
+            <strong>Por favor, corrija os seguintes erros:</strong>
+            <ul id="lista-erros-gerais"></ul>
+        </div>
+        
+        <form id="formAvancado" onsubmit="validarFormularioCompleto(event)">
+            
+            <div class="campo-grupo">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome">
+                <span class="erro-campo" id="erro-nome"></span>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="cpf">CPF (Apenas números):</label>
+                <input type="text" id="cpf" placeholder="Ex: 12345678901" maxlength="11">
+                <span class="erro-campo" id="erro-cpf"></span>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento">
+                <span class="erro-campo" id="erro-dataNascimento"></span>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" placeholder="Mínimo 6 caracteres">
+                <span class="erro-campo" id="erro-senha"></span>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="confirmarSenha">Confirmar Senha:</label>
+                <input type="password" id="confirmarSenha">
+                <span class="erro-campo" id="erro-confirmarSenha"></span>
+            </div>
+
+            <button type="submit">Finalizar Cadastro</button>
+        </form>
+    </div>
+
+    <script src="JS Exceção-2.js"></script>
+</body>
+</html>
